@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { uuid } from 'uuidv4';
 import './App.css';
 import Header from './Header';
 import AddTask from './AddTask';
@@ -9,7 +10,7 @@ function App() {
   const LOCAL_STORAGE_KEY = "tasks";
 
   const addTaskHandler = (task) => {
-    setTasks([...tasks, task]);
+    setTasks([...tasks, { id: uuid(), ...task }]);
   }
 
   useEffect(() => {
@@ -19,7 +20,7 @@ function App() {
   useEffect(() => {
     const getTasks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     if (getTasks) setTasks(getTasks);
-  },[]);
+  }, []);
 
   return (
     <div>
