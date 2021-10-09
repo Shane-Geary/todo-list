@@ -13,20 +13,27 @@ function App() {
     setTasks([...tasks, { id: uuid(), ...task }]);
   }
 
-  useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(tasks));
-  }, [tasks]);
+  const deleteListHandler = (id) => {
+    const newTaskList = tasks.filter((task => {
+      return task.id !== id;
+    }))
+    setTasks(newTaskList);
+  }
 
   useEffect(() => {
     const getTasks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     if (getTasks) setTasks(getTasks);
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(tasks));
+  }, [tasks]);
+
   return (
     <div>
       <Header />
       <AddTask addTaskHandler={addTaskHandler} />
-      <TaskList tasks={tasks} />
+      <TaskList tasks={tasks} deleteListHandler={deleteListHandler} />
     </div>
   );
 }

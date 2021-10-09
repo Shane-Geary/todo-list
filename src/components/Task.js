@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Task = (props) => {
-    const { id, description } = props.task;
+    const { description } = props.task;
 
     return (
         <div>

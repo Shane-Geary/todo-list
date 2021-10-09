@@ -12,7 +12,7 @@ class AddTask extends React.Component {
             return;
         }
         this.props.addTaskHandler(this.state);
-        this.setState({description: ""});
+        this.setState({ description: "" });
     }
 
     render() {
