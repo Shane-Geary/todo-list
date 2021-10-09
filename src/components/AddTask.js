@@ -11,7 +11,8 @@ class AddTask extends React.Component {
             alert("Fill in a task")
             return;
         }
-        console.log(this.state);
+        this.props.addTaskHandler(this.state);
+        this.setState({description: ""});
     }
 
     render() {

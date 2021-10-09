@@ -7,10 +7,14 @@ import TaskList from './TaskList';
 function App() {
   const [tasks, setTasks] = useState([]);
 
+  const addTaskHandler = (task) => {
+    setTasks([...tasks, task]);
+  }
+
   return (
     <div>
       <Header />
-      <AddTask />
+      <AddTask addTaskHandler={addTaskHandler} />
       <TaskList tasks={tasks} />
     </div>
   );
