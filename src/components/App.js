@@ -13,7 +13,7 @@ function App() {
     setTasks([...tasks, { id: uuid(), ...task }]);
   }
 
-  const deleteListHandler = (id) => {
+  const deleteTaskHandler = (id) => {
     const newTaskList = tasks.filter((task => {
       return task.id !== id;
     }))
@@ -33,7 +33,7 @@ function App() {
     <div>
       <Header />
       <AddTask addTaskHandler={addTaskHandler} />
-      <TaskList tasks={tasks} deleteListHandler={deleteListHandler} />
+      <TaskList tasks={tasks} deleteTaskHandler={deleteTaskHandler} />
     </div>
   );
 }
