@@ -1,8 +1,16 @@
 import React from 'react';
+import Task from './Task';
 
 const TaskList = (props) => {
-    console.log(props)
-    return <div>Today's Todos</div>
+
+    const renderTaskList = props.tasks.map((task) => {
+        return <Task task={task} />;
+    });
+    return (
+        <div>
+            {renderTaskList}
+        </div>
+    );
 }
 
 export default TaskList;

@@ -1,18 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Header from './Header';
 import AddTask from './AddTask';
 import TaskList from './TaskList';
 
 function App() {
-  const tasks = [
-    {
-      description: "clean the house"
-    },
-    {
-      description: "get milk and eggs"
-    }
-  ]
+  const [tasks, setTasks] = useState([]);
 
   return (
     <div>
