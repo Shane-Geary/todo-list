@@ -20,6 +20,18 @@ function App() {
     setTasks(newTaskList);
   }
 
+  const sortTaskHandler = tasks.sort(function(a, b) {
+    let task1 = a.description.toUpperCase();
+    let task2 = b.description.toUpperCase();
+    if (task1 < task2) {
+      return -1;
+    }
+    if (task1 > task2) {
+      return 1;
+    }
+    return 0;
+  });
+
   useEffect(() => {
     const getTasks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     if (getTasks) setTasks(getTasks);
@@ -33,7 +45,7 @@ function App() {
     <div>
       <Header />
       <AddTask addTaskHandler={addTaskHandler} />
-      <TaskList tasks={tasks} deleteTaskHandler={deleteTaskHandler} />
+      <TaskList tasks={tasks} deleteTaskHandler={deleteTaskHandler} sortTaskHandler={sortTaskHandler} />
     </div>
   );
 }
