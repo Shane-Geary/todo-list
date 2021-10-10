@@ -18,10 +18,10 @@ class AddTask extends React.Component {
     render() {
         return (
             <div>
-                <h2>New Task</h2>
+                <h2 className="new-task">New Task</h2>
                 <form onSubmit={this.add}>
                     <div>
-                        <label>Task</label>
+                        <label className="label">Task</label>
                         <input
                         type="text"
                         name="description"
