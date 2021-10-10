@@ -30,6 +30,7 @@ class AddTask extends React.Component {
                         onChange={(e) => this.setState({description: e.target.value})}
                         />
                     </div>
+                    <br />
                     <button>Add</button>
                 </form>
             </div>
