@@ -18,21 +18,24 @@ class AddTask extends React.Component {
     render() {
         return (
             <div>
-                <h2 className="new-task">New Task</h2>
                 <form onSubmit={this.add}>
-                    <div>
-                        <label className="label">Task</label>
+                    <div className="centered">
+                        <label htmlFor="name">Add Task</label>
                         <input
+                        id="name"
+                        required="required"
                         type="text"
                         name="description"
-                        placeholder="..."
                         value={this.state.description}
                         onChange={(e) => this.setState({description: e.target.value})}
                         />
                     </div>
                     <br />
-                    <button>Add</button>
+                    <button className="button"></button>
                 </form>
+                <br />
+                <br />
+                <br />
             </div>
         );
     }

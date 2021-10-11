@@ -6,7 +6,7 @@ const Task = (props) => {
     return (
             <div>
                 <ul>
-                    <li>{description}</li>
+                    <li className="li">- {description}</li>
                     <button onClick={() => props.removeTaskHandler(id)}>Remove</button>
                 </ul>
             </div>
