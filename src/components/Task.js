@@ -5,10 +5,13 @@ const Task = (props) => {
 
     return (
             <div>
-                <ul>
-                    <li className="li">- {description}</li>
-                    <button onClick={() => props.removeTaskHandler(id)}>Remove</button>
-                </ul>
+                <table className="row">
+                    <tr>
+                        <td>- {description} </td>
+                        <br />
+                        <td><button onClick={() => props.removeTaskHandler(id)}>Complete</button></td>
+                    </tr>
+                </table>
             </div>
         );
 }
