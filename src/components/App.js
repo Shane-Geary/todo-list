@@ -48,7 +48,7 @@ function App() {
         <Header />
         <Switch>
           <Route path="/addTask" component={addTaskHandler} />
-          <Route path="/" component={TaskList} />
+          <Route exact path="/" component={TaskList} />
         </Switch>
         {/* <AddTask addTaskHandler={addTaskHandler} />
         <TaskList tasks={tasks} deleteTaskHandler={deleteTaskHandler} sortTaskHandler={sortTaskHandler} /> */}

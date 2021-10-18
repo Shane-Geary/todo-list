@@ -21,7 +21,10 @@ const TaskList = (props) => {
     })
     return (
         <div>
-            {renderTaskList}
+            <h2>Task List
+                <button>Add Task</button>
+            </h2>
+            <div>{renderTaskList}</div>
         </div>
     );
 }
