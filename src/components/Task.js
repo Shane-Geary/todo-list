@@ -7,13 +7,14 @@ const Task = (props) => {
     return (
             <div>
                 <table className="row">
+                    <tbody>
                     <tr>
-                        <Link>
+                        <Link to={`/task/${id}`}>
                             <td>- {description} </td>
                         </Link>
-                        <br />
                         <td><button onClick={() => props.removeTaskHandler(id)}>Complete</button></td>
                     </tr>
+                    </tbody>
                 </table>
             </div>
         );
