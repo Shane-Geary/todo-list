@@ -49,16 +49,24 @@ function App() {
         <Switch>
           <Route 
             path="/addTask" 
-            component={() => (
-            <AddTask addTaskHandler={addTaskHandler} />
-            )} 
+            render={(props) => (
+            <AddTask 
+            {...props} 
+            addTaskHandler={addTaskHandler} 
+            />
+            )}
           />
           <Route 
             exact path="/" 
-            component={() => (
-              <TaskList tasks={tasks} deleteTaskHandler={deleteTaskHandler} sortTaskHandler={sortTaskHandler} />
-              )} 
+            render={(props) => (
+            <TaskList 
+            {...props} 
+            tasks={tasks} 
+            deleteTaskHandler={deleteTaskHandler} 
+            sortTaskHandler={sortTaskHandler} 
             />
+            )}
+          />
         </Switch>
         {/* <AddTask addTaskHandler={addTaskHandler} />
         <TaskList tasks={tasks} deleteTaskHandler={deleteTaskHandler} sortTaskHandler={sortTaskHandler} /> */}

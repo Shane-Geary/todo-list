@@ -8,14 +8,7 @@ const TaskList = (props) => {
         props.deleteTaskHandler(id);
     }
 
-    const tasks = [
-        {
-            id: 1,
-            description: "Add Routes",
-        }
-    ]
-
-    const renderTaskList = tasks.map((task) => {
+    const renderTaskList = props.tasks.map((task) => {
         return (
             <Task task={task} removeTaskHandler={removeTaskHandler} key={task.id} />
         );
