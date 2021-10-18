@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Task = (props) => {
     const { id, description } = props.task;
@@ -7,7 +8,9 @@ const Task = (props) => {
             <div>
                 <table className="row">
                     <tr>
-                        <td>- {description} </td>
+                        <Link>
+                            <td>- {description} </td>
+                        </Link>
                         <br />
                         <td><button onClick={() => props.removeTaskHandler(id)}>Complete</button></td>
                     </tr>

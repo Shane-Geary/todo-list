@@ -13,7 +13,7 @@ class AddTask extends React.Component {
         }
         this.props.addTaskHandler(this.state);
         this.setState({ description: "" });
-        this.props.history.push('/')
+        this.props.history.push('/');
     }
 
     render() {
