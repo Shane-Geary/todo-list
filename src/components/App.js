@@ -47,8 +47,18 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route path="/addTask" component={addTaskHandler} />
-          <Route exact path="/" component={TaskList} />
+          <Route 
+            path="/addTask" 
+            component={() => (
+            <AddTask addTaskHandler={addTaskHandler} />
+            )} 
+          />
+          <Route 
+            exact path="/" 
+            component={() => (
+              <TaskList tasks={tasks} deleteTaskHandler={deleteTaskHandler} sortTaskHandler={sortTaskHandler} />
+              )} 
+            />
         </Switch>
         {/* <AddTask addTaskHandler={addTaskHandler} />
         <TaskList tasks={tasks} deleteTaskHandler={deleteTaskHandler} sortTaskHandler={sortTaskHandler} /> */}

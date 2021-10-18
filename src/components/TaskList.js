@@ -23,7 +23,7 @@ const TaskList = (props) => {
     return (
         <div>
             <h2>Task List
-                <Link>
+                <Link to='/addTask'>
                     <button>Add Task</button>
                 </Link> 
             </h2>
