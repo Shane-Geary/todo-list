@@ -8,12 +8,12 @@ const Task = (props) => {
             <div>
                 <table className="row">
                     <tbody>
-                    <tr>
-                        <Link to={`/task/${id}`}>
-                            <td>- {description} </td>
-                        </Link>
-                        <td><button onClick={() => props.removeTaskHandler(id)}>Complete</button></td>
-                    </tr>
+                        <tr>
+                            <Link to={{pathname: `/task/${id}`, state: {task: props.task}}}>
+                                <td>- {description} </td>
+                            </Link>
+                            <td><button onClick={() => props.removeTaskHandler(id)}>Complete</button></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

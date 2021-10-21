@@ -5,6 +5,7 @@ import './App.css';
 import Header from './Header';
 import AddTask from './AddTask';
 import TaskList from './TaskList';
+import EditTask from './EditTask';
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -67,9 +68,11 @@ function App() {
             />
             )}
           />
+          <Route
+            path="/task/:id" 
+            component={EditTask}
+          />
         </Switch>
-        {/* <AddTask addTaskHandler={addTaskHandler} />
-        <TaskList tasks={tasks} deleteTaskHandler={deleteTaskHandler} sortTaskHandler={sortTaskHandler} /> */}
       </Router>
     </div>
   );
