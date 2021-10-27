@@ -70,7 +70,12 @@ function App() {
           />
           <Route
             path="/task/:id" 
-            component={EditTask}
+            render={(props) => (
+              <EditTask 
+              {...props}
+              tasks={tasks}
+              />
+            )}
           />
         </Switch>
       </Router>
