@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { uuid } from 'uuidv4';
+import api from '../api/tasksapi';
 import './App.css';
 import Header from './Header';
 import AddTask from './AddTask';
@@ -10,6 +11,11 @@ import EditTask from './EditTask';
 function App() {
   const [tasks, setTasks] = useState([]);
   const LOCAL_STORAGE_KEY = "tasks";
+
+  const retrieveTasks = async () => {
+    const response = await api.get("/tasks");
+    return response.data;
+  }
 
   const addTaskHandler = (task) => {
     setTasks([...tasks, { id: uuid(), ...task }]);
@@ -35,8 +41,13 @@ function App() {
   });
 
   useEffect(() => {
-    const getTasks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-    if (getTasks) setTasks(getTasks);
+    // const getTasks = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    // if (getTasks) setTasks(getTasks);
+    const getAllTasks = async () => {
+      const allTasks = await retrieveTasks();
+      if(allTasks) setTasks(allTasks);
+    }
+    getAllTasks();
   }, []);
 
   useEffect(() => {
